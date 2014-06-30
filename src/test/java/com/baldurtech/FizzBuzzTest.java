@@ -5,23 +5,23 @@ public class FizzBuzzTest
 	static boolean testResult = true;
 	public static void main(String[] args)
 	{		
-		test_1();
-		test_2();
-		test_3();		
+		test_1_should_be();
+		test_2_should_be();
+		test_3_should_be();		
 		outputTestReport();
 		
 	}
-	public static void test_1()
+	public static void test_1_should_be()
 	{
 		FizzBuzz fizzBuzz1 = new FizzBuzz();
 		assertEquals("1",fizzBuzz1.say(1));
 	}
-	public static void test_2()
+	public static void test_2_should_be()
 	{
 		FizzBuzz fizzBuzz2 = new FizzBuzz();
 		assertEquals("2",fizzBuzz2.say(2));
 	}
-	public static void test_3()
+	public static void test_3_should_be()
 	{
 		FizzBuzz fizzBuzz3 = new FizzBuzz();
 		assertEquals("Fizz",fizzBuzz3.say(3));
