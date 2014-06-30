@@ -6,5 +6,6 @@ public class FizzBuzzTest
 	{
 		FizzBuzz fizzBuzz = new FizzBuzz();
 		System.out.println("1".equals(fizzBuzz.say(1)));
+		System.out.println("2".equals(fizzBuzz.say(2)));
 	}
 }
