@@ -4,8 +4,29 @@ public class FizzBuzzTest
 {
 	public static void main(String[] args)
 	{
+		boolean testResult = true;
 		FizzBuzz fizzBuzz = new FizzBuzz();
-		System.out.println("1".equals(fizzBuzz.say(1)));
-		System.out.println("2".equals(fizzBuzz.say(2)));
+		String actualResult = fizzBuzz.say(1);
+		if(false == "1".equals(actualResult))
+		{
+			testResult = false;
+			System.out.println("Expected '1',but '" + actualResult + "'");
+		}
+		actualResult = fizzBuzz.say(2);
+		if(false =="2".equals(actualResult))
+		{
+			testResult = false;
+			System.out.println("Expected '2' but '" + actualResult + "'");
+		}
+		
+		if(testResult)
+		{
+			System.out.println("TEST SUCCESS");
+		}
+		else
+		{
+			System.out.println("TEST FAILED");
+		}
+
 	}
 }
