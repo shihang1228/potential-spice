@@ -9,6 +9,7 @@ public class FizzBuzzTest
 		
 		assertEquals("1",fizzBuzz.say(1));
 		assertEquals("2",fizzBuzz.say(2));
+		assertEquals("Fizz",fizzBuzz.say(3));
 		
 		outputTestReport();
 		
