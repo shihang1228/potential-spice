@@ -2,9 +2,9 @@ package com.baldurtech;
 
 public class FizzBuzzTest
 {
+	static boolean testResult = true;
 	public static void main(String[] args)
-	{
-		boolean testResult = true;
+	{		
 		FizzBuzz fizzBuzz = new FizzBuzz();
 		String actualResult = fizzBuzz.say(1);
 		if(false == "1".equals(actualResult))
