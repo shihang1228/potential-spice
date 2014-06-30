@@ -10,6 +10,19 @@ public class FizzBuzzTest
 		assertEquals("1",fizzBuzz.say(1));
 		assertEquals("2",fizzBuzz.say(2));
 		
+		outputTestReport();
+		
+	}
+	public static void assertEquals(String expectedResult,String actualResult)
+	{
+		if(false == expectedResult.equals(actualResult))
+		{
+			testResult = false;
+			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
+		}
+	}
+	public static void outputTestReport()
+	{
 		if(testResult)
 		{
 			System.out.println("TEST SUCCESS");
@@ -19,14 +32,6 @@ public class FizzBuzzTest
 			System.out.println("TEST FAILED");
 		}
 
-	}
-	public static void assertEquals(String expectedResult,String actualResult)
-	{
-		if(false == expectedResult.equals(actualResult))
-		{
-			testResult = false;
-			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
-		}
 	}
 	
 }
