@@ -9,7 +9,6 @@ public class FizzBuzz
 		{
 			thisIsABug = true;
 		}
-		if(num == 4) throw new RuntimeException("we don't need 4!");
 		if(num % 3 == 0)
 		{
 			if(thisIsABug)
