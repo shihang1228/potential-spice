@@ -1,18 +1,7 @@
 package com.baldurtech;
 
-import java.lang.reflect.Method;
-import java.util.List;
-import java.util.ArrayList;
-
-public class FizzBuzzTest
+public class FizzBuzzTest extends TestCase
 {
-	static boolean testResult = true;
-	public static void main(String[] args)throws Exception
-	{
-		runAllTests(FizzBuzzTest.class);
-		outputTestReport();
-	}
-	
 	FizzBuzz fizzBuzz = new FizzBuzz();
 	public void test_1_should_be_1()
 	{
@@ -30,58 +19,7 @@ public class FizzBuzzTest
 	{
 		assertEquals("4",fizzBuzz.say(4));
 	}
-	
-	private static List<Method> getAllTestMethods(Class clazz)
-	{
-		List<Method> testMethods = new ArrayList<Method>();
-		Method[] methods = clazz.getDeclaredMethods();
-		for(Method method: methods)
-		{
-			if(method.getName().startsWith("test"))
-			{
-				testMethods.add(method);
-			}
-		}
-		return testMethods;
-	}
-	public static void runAllTests(Class clazz) throws Exception
-	{
-		for(Method method: getAllTestMethods(clazz))
-		{
-			System.out.println("testing:" + method.getName());
-			try
-			{
-				Object obj = clazz.newInstance();
-				method.invoke(obj,new Object[]{});
-			}
-			catch(Exception e)
-			{
-				testResult = false;
-                System.out.println("Unexpected exception!");
-                e.printStackTrace();
-			}
-		}
-	}
-	
-	public static void assertEquals(String expectedResult,String actualResult)
-	{
-		if(false == expectedResult.equals(actualResult))
-		{
-			testResult = false;
-			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
-		}
-	}
-	public static void outputTestReport()
-	{
-		if(testResult)
-		{
-			System.out.println("TEST SUCCESS");
-		}
-		else
-		{
-			System.out.println("TEST FAILED");
-		}
 
-	}
+	
 	
 }

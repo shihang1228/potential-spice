@@ -1,6 +1,6 @@
 package com.baldurtech;
 
-public class FizzBuzz
+public class FizzBuzz 
 {
 	boolean thisIsABug = false;
 	public String say(Integer num)
