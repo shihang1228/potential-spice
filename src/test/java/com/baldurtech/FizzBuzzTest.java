@@ -9,13 +9,7 @@ public class FizzBuzzTest
 	static boolean testResult = true;
 	public static void main(String[] args)throws Exception
 	{
-		Class clazz = FizzBuzzTest.class;
-		for(Method method: getAllTestMethods(clazz))
-		{
-			System.out.println("testing:" + method.getName());
-			Object obj = clazz.newInstance();
-			method.invoke(obj,new Object[]{});
-		}
+		runAllTests(FizzBuzzTest.class);
 		outputTestReport();
 	}
 	
@@ -32,6 +26,10 @@ public class FizzBuzzTest
 	{
 		assertEquals("Fizz",fizzBuzz.say(3));
 	}
+	public void test_4_should_be_4()
+	{
+		assertEquals("4",fizzBuzz.say(4));
+	}
 	
 	private static List<Method> getAllTestMethods(Class clazz)
 	{
@@ -45,6 +43,15 @@ public class FizzBuzzTest
 			}
 		}
 		return testMethods;
+	}
+	public static void runAllTests(Class clazz) throws Exception
+	{
+		for(Method method: getAllTestMethods(clazz))
+		{
+			System.out.println("testing:" + method.getName());
+			Object obj = clazz.newInstance();
+			method.invoke(obj,new Object[]{});
+		}
 	}
 	
 	public static void assertEquals(String expectedResult,String actualResult)
