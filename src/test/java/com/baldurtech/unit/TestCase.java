@@ -67,6 +67,14 @@ public class TestCase
 			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
 		}
 	}
+	public static void assertEquals(int expectedResult,int actualResult)
+	{
+		if(expectedResult != actualResult)
+		{
+			testResult = false;
+			System.out.println("Expected '" + expectedResult + "' ,but '" + actualResult + "'");
+		}
+	}
 	public static void outputTestReport()
 	{
 		if(testResult)
