@@ -67,7 +67,14 @@ public class TestCase
 	{
 		assertEquals(expectedResult,actualResult,expectedResult == actualResult);
 	}
-	
+	public static void assertTrue(boolean actualResult)
+	{
+		assertEquals(true, actualResult, true == actualResult);
+	}
+	public static void assertFalse(boolean actualResult)
+	{
+		assertEquals(false, actualResult, false == actualResult);
+	}
 	public static void assertNull(Object actualResult)
 	{
 		assertEquals(null, actualResult, actualResult == null);
