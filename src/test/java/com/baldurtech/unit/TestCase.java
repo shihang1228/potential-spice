@@ -61,7 +61,8 @@ public class TestCase
 	
 	public static void assertEquals(String expectedResult,String actualResult)
 	{
-		if(false == expectedResult.equals(actualResult))
+		boolean testFail = false == expectedResult.equals(actualResult);
+		if(testFail)
 		{
 			testResult = false;
 			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
@@ -69,7 +70,8 @@ public class TestCase
 	}
 	public static void assertEquals(int expectedResult,int actualResult)
 	{
-		if(expectedResult != actualResult)
+		boolean testFail = expectedResult != actualResult;
+		if(testFail)
 		{
 			testResult = false;
 			System.out.println("Expected '" + expectedResult + "' ,but '" + actualResult + "'");
