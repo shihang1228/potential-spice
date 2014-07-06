@@ -61,18 +61,36 @@ public class TestCase
 	
 	public static void assertEquals(String expectedResult,String actualResult)
 	{
-		assertEquals(expectedResult,actualResult,false == expectedResult.equals(actualResult));
+		assertEquals(expectedResult,actualResult,expectedResult.equals(actualResult));
 	}
 	public static void assertEquals(int expectedResult,int actualResult)
 	{
-		assertEquals(expectedResult,actualResult,expectedResult != actualResult);
+		assertEquals(expectedResult,actualResult,expectedResult == actualResult);
 	}
-	private static void assertEquals(Object expectedResult, Object actualResult, boolean testFail)
+	
+	public static void assertNull(Object actualResult)
 	{
-		if(testFail)
+		assertEquals(null, actualResult, actualResult == null);
+	}
+	public static void assertEquals(Object expectedResult,Object actualResult)
+	{
+		Boolean testResult = false;
+		if(expectedResult == null && actualResult == null)
+		{
+			testResult = true;
+		}
+		else if(expectedResult != null)
+		{
+			testResult = expectedResult.equals(actualResult);
+		}
+		assertEquals(expectedResult, actualResult, testResult);
+	}
+	private static void assertEquals(Object expectedResult, Object actualResult, boolean testSuccess)
+	{
+		if(!testSuccess)
 		{
 			testResult = false;
-			System.out.println("Expected '" + expectedResult + "' ,but '" + actualResult + "'");
+			System.out.println("Expected '" + (expectedResult == null?"Null":expectedResult) + "' ,but '" + (actualResult == null?"Null":actualResult) + "'");
 		}
 	}
 	public static void outputTestReport()
