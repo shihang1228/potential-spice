@@ -10,15 +10,18 @@ public class TestCase
 	static boolean testResult = true;
 	public static void main(String[] args)throws Exception
 	{		
-		String testPackage = "com.baldurtech";
-		Reflections reflections = new Reflections(testPackage);
-		Set<Class<? extends TestCase>> allTestCases = 
-		reflections.getSubTypesOf(TestCase.class);
-		
-		for(Class clazz:allTestCases)
+		if(args.length > 0)
 		{
-			System.out.println("Testing:" + clazz.getName());
-			runAllTests(clazz);
+			String testPackage = args[0];
+			Reflections reflections = new Reflections(testPackage);
+			Set<Class<? extends TestCase>> allTestCases = 
+			reflections.getSubTypesOf(TestCase.class);
+		
+			for(Class clazz:allTestCases)
+			{
+				System.out.println("Testing:" + clazz.getName());
+				runAllTests(clazz);
+			}
 		}
 		
 		outputTestReport();
