@@ -62,15 +62,15 @@ public class TestCase
 	public static void assertEquals(String expectedResult,String actualResult)
 	{
 		boolean testFail = false == expectedResult.equals(actualResult);
-		if(testFail)
-		{
-			testResult = false;
-			System.out.println("Expected '" + expectedResult + "',but '" + actualResult + "'");
-		}
+		assertEquals(expectedResult,actualResult,testFail);
 	}
 	public static void assertEquals(int expectedResult,int actualResult)
 	{
 		boolean testFail = expectedResult != actualResult;
+		assertEquals(expectedResult,actualResult,testFail);
+	}
+	private static void assertEquals(Object expectedResult, Object actualResult, boolean testFail)
+	{
 		if(testFail)
 		{
 			testResult = false;
