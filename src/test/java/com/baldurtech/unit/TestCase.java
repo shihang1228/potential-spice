@@ -61,13 +61,11 @@ public class TestCase
 	
 	public static void assertEquals(String expectedResult,String actualResult)
 	{
-		boolean testFail = false == expectedResult.equals(actualResult);
-		assertEquals(expectedResult,actualResult,testFail);
+		assertEquals(expectedResult,actualResult,false == expectedResult.equals(actualResult));
 	}
 	public static void assertEquals(int expectedResult,int actualResult)
 	{
-		boolean testFail = expectedResult != actualResult;
-		assertEquals(expectedResult,actualResult,testFail);
+		assertEquals(expectedResult,actualResult,expectedResult != actualResult);
 	}
 	private static void assertEquals(Object expectedResult, Object actualResult, boolean testFail)
 	{
