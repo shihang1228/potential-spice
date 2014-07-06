@@ -1,5 +1,7 @@
 package com.baldurtech;
 
+import com.baldurtech.unit.TestCase;
+
 public class FizzBuzzTest extends TestCase
 {
 	FizzBuzz fizzBuzz = new FizzBuzz();
